@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Louis-Simon Ménard, Senior Unity and C# Developer specializing in gameplay, tools, simulation systems, and technical art." />
+  <title>Louis-Simon Ménard | Senior Unity / C# Developer</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --surface: #11182b;
+      --surface-2: #182238;
+      --text: #edf3ff;
+      --muted: #aab7cf;
+      --accent: #65d2c7;
+      --accent-2: #7aa7ff;
+      --border: rgba(255,255,255,.10);
+      --shadow: 0 18px 55px rgba(0,0,0,.28);
+      --radius: 20px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(101,210,199,.13), transparent 28rem),
+        radial-gradient(circle at 85% 0%, rgba(122,167,255,.14), transparent 30rem),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+    .container { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(16px);
+      background: rgba(11,16,32,.75);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand { font-weight: 800; letter-spacing: -.03em; text-decoration: none; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 20px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .95rem; }
+    .nav-links a:hover { color: var(--text); }
+
+    header { padding: 110px 0 72px; }
+    .hero { display: grid; grid-template-columns: 1.35fr .65fr; gap: 44px; align-items: center; }
+    .eyebrow { color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; }
+    h1 { margin: 10px 0 16px; font-size: clamp(3rem, 8vw, 6.5rem); line-height: .95; letter-spacing: -.065em; }
+    .hero h2 { margin: 0 0 22px; color: var(--muted); font-size: clamp(1.15rem, 2.3vw, 1.55rem); font-weight: 500; }
+    .lead { max-width: 760px; color: #cfdaec; font-size: 1.08rem; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 19px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      text-decoration: none;
+      font-weight: 750;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.28); }
+    .button.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #07111d; border: 0; }
+
+    .hero-card, .card {
+      background: linear-gradient(145deg, rgba(24,34,56,.95), rgba(17,24,43,.9));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+    }
+    .hero-card { padding: 28px; }
+    .stat { padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .stat:last-child { border-bottom: 0; }
+    .stat strong { display: block; font-size: 1.7rem; letter-spacing: -.04em; }
+    .stat span { color: var(--muted); }
+
+    section { padding: 70px 0; }
+    .section-heading { margin-bottom: 28px; }
+    .section-heading h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -.045em; }
+    .section-heading p { color: var(--muted); margin: 8px 0 0; max-width: 720px; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill { padding: 9px 13px; border-radius: 999px; background: rgba(255,255,255,.055); border: 1px solid var(--border); color: #dce6f7; }
+
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .card { padding: 26px; }
+    .project-card { padding: 0; overflow: hidden; }
+    .project-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-bottom: 1px solid var(--border); background: var(--surface-2); }
+    .project-content { padding: 24px 26px 26px; }
+    .project-card:hover .project-image { transform: scale(1.025); }
+    .project-image { transition: transform .3s ease; }
+    .card h3 { margin: 0 0 8px; font-size: 1.25rem; }
+    .meta { color: var(--accent); font-size: .9rem; font-weight: 750; }
+    .card p { color: var(--muted); margin-bottom: 0; }
+
+    .timeline { display: grid; gap: 16px; }
+    .role { display: grid; grid-template-columns: 190px 1fr; gap: 26px; padding: 24px 0; border-top: 1px solid var(--border); }
+    .role:last-child { border-bottom: 1px solid var(--border); }
+    .role .date { color: var(--accent); font-weight: 750; }
+    .role h3 { margin: 0 0 7px; }
+    .role p { margin: 0; color: var(--muted); }
+
+    .project-link { display: inline-block; margin-top: 14px; color: var(--accent); text-decoration: none; font-weight: 750; }
+    .project-link:hover { text-decoration: underline; }
+
+    .contact { text-align: center; padding: 46px; }
+    .contact h2 { margin-top: 0; font-size: clamp(2rem, 5vw, 3rem); }
+    .contact p { color: var(--muted); }
+
+    footer { padding: 34px 0 52px; color: var(--muted); text-align: center; font-size: .92rem; }
+
+    @media (max-width: 800px) {
+      .hero, .grid { grid-template-columns: 1fr; }
+      .hero { gap: 28px; }
+      .role { grid-template-columns: 1fr; gap: 5px; }
+      .nav-links { display: none; }
+      header { padding-top: 78px; }
+      .contact { padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Louis-Simon Ménard</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header>
+      <div class="container hero">
+        <div>
+          <div class="eyebrow">Senior Unity / C# Developer</div>
+          <h1>Building games, tools and interactive systems.</h1>
+          <h2>Gameplay · Unity Editor tools · Simulation · Technical art</h2>
+          <p class="lead">I am a Montréal-based developer with 20 years of professional game-development experience. I specialize in Unity and C#, with a multidisciplinary background spanning gameplay programming, creator tools, animation workflows, UI, technical art and full-cycle product delivery.</p>
+          <div class="actions">
+            <a class="button primary" href="mailto:lsmenard@gmail.com">Contact me</a>
+            <a class="button" href="Louis-Simon_Menard_CV.pdf" target="_blank" rel="noopener">View CV</a>
+            <a class="button" href="#projects">Selected work</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Career highlights">
+          <div class="stat"><strong>20 years</strong><span>Professional game development</span></div>
+          <div class="stat"><strong>20+ games</strong><span>Created at Armor Games</span></div>
+          <div class="stat"><strong>Unity & C#</strong><span>Gameplay, tools and simulation</span></div>
+          <div class="stat"><strong>French & English</strong><span>Spoken and written</span></div>
+        </aside>
+      </div>
+    </header>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-heading">
+          <h2>About</h2>
+          <p>I combine senior engineering experience with a strong foundation in game design, 2D/3D art and animation. I am comfortable owning features from early concept and technical planning through implementation, iteration and delivery.</p>
+        </div>
+        <div class="skills" aria-label="Skills">
+          <span class="pill">Unity</span><span class="pill">C#</span><span class="pill">Python</span><span class="pill">C++</span><span class="pill">Gameplay Systems</span><span class="pill">Unity Editor Integration</span><span class="pill">Prototyping</span><span class="pill">UI</span><span class="pill">Animation Workflows</span><span class="pill">URP</span><span class="pill">Shaders</span><span class="pill">Technical Design</span><span class="pill">Blender</span><span class="pill">Photoshop</span><span class="pill">Product Ownership</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading"><h2>Experience</h2><p>Recent roles and selected career highlights.</p></div>
+        <div class="timeline">
+          <article class="role"><div class="date">2022–2025</div><div><h3>Unity Technologies — Senior Software Developer</h3><p>Integrated AI research into Unity Editor workflows and owned the design, planning and delivery of a creator-facing product connecting animators with machine-intelligence capabilities.</p></div></article>
+          <article class="role"><div class="date">2020–2022</div><div><h3>CAE Healthcare — Senior Software Developer</h3><p>Developed Unity-based medical simulations for nursing education and translated clinical requirements into practical software features.</p></div></article>
+          <article class="role"><div class="date">2016–2020</div><div><h3>Bunker Sim — Independent Producer / Lead Developer</h3><p>Created an original post-apocalyptic colony-management game, recruited a small team and led programming, art direction, design, planning, animation and marketing.</p></div></article>
+          <article class="role"><div class="date">2010–2014</div><div><h3>Armor Games — Senior Software Developer</h3><p>Created more than 20 browser games with end-to-end ownership of design and implementation, delivering multiple successful releases to a large audience.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading"><h2>Selected projects</h2><p>A sample of shipped independent and studio work.</p></div>
+        <div class="grid">
+          <article class="card project-card"><img class="project-image" src="images/house-of-wolves-2.svg" alt="House of Wolves 2 project cover" loading="lazy"><div class="project-content"><div class="meta">Strategy game · Unity</div><h3>House of Wolves 2</h3><p>Independent strategy game with ownership across programming, IP creation, game design, art direction, planning, animation and marketing.</p><a class="project-link" href="https://www.youtube.com/watch?v=nCoq7Z0dp00" target="_blank" rel="noopener">Watch gameplay →</a></div></article>
+          <article class="card project-card"><img class="project-image" src="images/sellsword.svg" alt="Sellsword project cover" loading="lazy"><div class="project-content"><div class="meta">Multiplayer action game</div><h3>Sellsword</h3><p>A 2D medieval multiplayer combat game covering multiplayer systems, web development, art direction, design, animation and marketing.</p><a class="project-link" href="https://www.youtube.com/watch?v=BnOVHqHa-7Y" target="_blank" rel="noopener">Watch gameplay →</a></div></article>
+          <article class="card project-card"><img class="project-image" src="images/planet-noevo-2.svg" alt="Planet Noevo II project cover" loading="lazy"><div class="project-content"><div class="meta">Survival game · Armor Games</div><h3>Planet Noevo 2</h3><p>Created and shipped a survival game, including IP, design, planning, programming, animation, marketing and small-team coordination.</p><a class="project-link" href="https://armorgames.com/play/17620/planet-noevo-ii" target="_blank" rel="noopener">View project →</a></div></article>
+          <article class="card project-card"><img class="project-image" src="images/age-of-war.svg" alt="Age of War project cover" loading="lazy"><div class="project-content"><div class="meta">Creator / Lead Developer</div><h3>Age of War</h3><p>Competition-winning strategy game that became a major online success with millions of plays, followed by a sequel developed with a small art team.</p><a class="project-link" href="https://www.newgrounds.com/portal/view/408209" target="_blank" rel="noopener">Play Age of War →</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="card contact">
+          <h2>Let’s build something memorable.</h2>
+          <p>Available for senior Unity/C# development, gameplay systems, tools, simulation and technical-art work.</p>
+          <div class="actions" style="justify-content:center">
+            <a class="button primary" href="mailto:lsmenard@gmail.com">lsmenard@gmail.com</a>
+            <a class="button" href="tel:+15145672836">(514) 567-2836</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© <span id="year"></span> Louis-Simon Ménard. Built as a lightweight static portfolio.</div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#442f4f"/><stop offset="1" stop-color="#161725"/></linearGradient></defs>
+  <rect width="800" height="450" fill="url(#g)"/>
+  <circle cx="630" cy="115" r="85" fill="#7aa7ff" opacity=".35"/>
+  <path d="M180 340 l130-220 34 20-132 220z" fill="#dce6f7"/>
+  <path d="M285 158 l95 62-22 34-95-62z" fill="#65d2c7"/>
+  <path d="M510 115 h78 v235 h-78z" fill="#202b42"/>
+  <path d="M470 350 h160 l-35-105h-90z" fill="#182238"/>
+  <text x="46" y="72" fill="#fff" font-family="Arial, sans-serif" font-size="42" font-weight="700">SELLSWORD</text>
+  <text x="48" y="112" fill="#c6bed0" font-family="Arial, sans-serif" font-size="20">2D multiplayer combat</text>
+</svg>

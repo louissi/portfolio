@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#243b55"/><stop offset="1" stop-color="#141e30"/></linearGradient></defs>
+  <rect width="800" height="450" fill="url(#g)"/>
+  <circle cx="650" cy="95" r="70" fill="#f0c674" opacity=".75"/>
+  <path d="M0 330 L120 230 L230 310 L360 180 L495 295 L610 210 L800 315 V450 H0Z" fill="#182238"/>
+  <path d="M260 352 l36-86 36 86zM395 355 l45-112 45 112zM540 352 l34-78 34 78z" fill="#65d2c7" opacity=".75"/>
+  <text x="46" y="72" fill="#fff" font-family="Arial, sans-serif" font-size="42" font-weight="700">HOUSE OF WOLVES 2</text>
+  <text x="48" y="112" fill="#aab7cf" font-family="Arial, sans-serif" font-size="20">Independent strategy game</text>
+</svg>

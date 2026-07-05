@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3b4b3f"/><stop offset="1" stop-color="#121a18"/></linearGradient></defs>
+  <rect width="800" height="450" fill="url(#g)"/>
+  <circle cx="630" cy="115" r="95" fill="#c9d46c" opacity=".65"/>
+  <path d="M0 360 Q120 305 240 350 T480 340 T800 355 V450 H0Z" fill="#202b28"/>
+  <path d="M165 345 l75-140 42 140zM305 348 l105-190 55 190zM500 345 l70-120 42 120z" fill="#8aa27d" opacity=".7"/>
+  <rect x="640" y="280" width="58" height="68" rx="8" fill="#65d2c7"/>
+  <text x="46" y="72" fill="#fff" font-family="Arial, sans-serif" font-size="42" font-weight="700">PLANET NOEVO II</text>
+  <text x="48" y="112" fill="#c5d2c8" font-family="Arial, sans-serif" font-size="20">Survival game · Armor Games</text>
+</svg>

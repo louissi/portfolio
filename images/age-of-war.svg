@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#5c3c2c"/><stop offset="1" stop-color="#1b1715"/></linearGradient></defs>
+  <rect width="800" height="450" fill="url(#g)"/>
+  <circle cx="642" cy="108" r="75" fill="#f2a65a" opacity=".75"/>
+  <path d="M0 360 L110 295 L215 350 L330 270 L460 345 L585 250 L800 330 V450 H0Z" fill="#2b211d"/>
+  <path d="M140 354 v-95 h70 v95M570 354 v-130 h80 v130" fill="#d07a48" opacity=".75"/>
+  <path d="M168 260 l12-36 12 36M600 225 l10-42 10 42" fill="#f2d0a4"/>
+  <text x="46" y="72" fill="#fff" font-family="Arial, sans-serif" font-size="42" font-weight="700">AGE OF WAR</text>
+  <text x="48" y="112" fill="#d8c2b2" font-family="Arial, sans-serif" font-size="20">Creator · Lead developer</text>
+</svg>
