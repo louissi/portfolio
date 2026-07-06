@@ -7,134 +7,183 @@
   <title>Louis-Simon Ménard | Senior Unity / C# Developer</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --surface: #11182b;
-      --surface-2: #182238;
-      --text: #edf3ff;
-      --muted: #aab7cf;
-      --accent: #65d2c7;
-      --accent-2: #7aa7ff;
-      --border: rgba(255,255,255,.10);
-      --shadow: 0 18px 55px rgba(0,0,0,.28);
-      --radius: 20px;
-      --max: 1120px;
+      --bg: #1b1d18;
+      --bg-deep: #11130f;
+      --panel: #2a2d26;
+      --panel-2: #353a30;
+      --panel-dark: #20231d;
+      --olive: #6f7d42;
+      --olive-bright: #98ad5d;
+      --olive-dim: #4d5830;
+      --blue: #8aa4b4;
+      --text: #d7dccd;
+      --muted: #9da594;
+      --border-light: #59604e;
+      --border-dark: #0c0e0b;
+      --shadow: 0 10px 26px rgba(0,0,0,.48);
+      --max: 1080px;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 10% 10%, rgba(101,210,199,.13), transparent 28rem),
-        radial-gradient(circle at 85% 0%, rgba(122,167,255,.14), transparent 30rem),
-        var(--bg);
-      line-height: 1.65;
+        linear-gradient(rgba(255,255,255,.012) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px),
+        radial-gradient(circle at 50% -120px, #39402d 0, #22251e 32rem, var(--bg-deep) 75rem);
+      background-size: 4px 4px, 4px 4px, auto;
+      font-family: Tahoma, Verdana, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
     }
 
     a { color: inherit; }
-    .container { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+    .container { width: min(calc(100% - 30px), var(--max)); margin: 0 auto; }
+
+    body::before {
+      content: "LOUIS-SIMON MÉNARD — PORTFOLIO";
+      display: block;
+      height: 29px;
+      padding: 6px 15px 0;
+      color: #aeb7a2;
+      background: linear-gradient(#3a3d36, #252821 55%, #181a16 56%);
+      border-bottom: 1px solid #080a07;
+      box-shadow: inset 0 1px #5d6257;
+      font-size: 11px;
+      letter-spacing: .05em;
+      text-shadow: 1px 1px #000;
+    }
 
     nav {
       position: sticky;
       top: 0;
       z-index: 10;
-      backdrop-filter: blur(16px);
-      background: rgba(11,16,32,.75);
-      border-bottom: 1px solid var(--border);
+      background: linear-gradient(#33372f, #252922);
+      border-top: 1px solid #4d5347;
+      border-bottom: 1px solid #090b08;
+      box-shadow: 0 3px 8px rgba(0,0,0,.5);
     }
 
-    .nav-inner {
-      min-height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand { font-weight: 800; letter-spacing: -.03em; text-decoration: none; }
-    .nav-links { display: flex; flex-wrap: wrap; gap: 20px; }
-    .nav-links a { color: var(--muted); text-decoration: none; font-size: .95rem; }
-    .nav-links a:hover { color: var(--text); }
-
-    header { padding: 110px 0 72px; }
-    .hero { display: grid; grid-template-columns: 1.35fr .65fr; gap: 44px; align-items: center; }
-    .eyebrow { color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; }
-    h1 { margin: 10px 0 16px; font-size: clamp(3rem, 8vw, 6.5rem); line-height: .95; letter-spacing: -.065em; }
-    .hero h2 { margin: 0 0 22px; color: var(--muted); font-size: clamp(1.15rem, 2.3vw, 1.55rem); font-weight: 500; }
-    .lead { max-width: 760px; color: #cfdaec; font-size: 1.08rem; }
-
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 48px;
-      padding: 0 19px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
+    .nav-inner { min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand {
+      color: #d9dfcf;
+      font-size: 18px;
+      font-weight: 700;
       text-decoration: none;
-      font-weight: 750;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+      text-shadow: 1px 1px #000;
     }
-    .button:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.28); }
-    .button.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #07111d; border: 0; }
-
-    .hero-card, .card {
-      background: linear-gradient(145deg, rgba(24,34,56,.95), rgba(17,24,43,.9));
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
+    .brand::before { content: "▣ "; color: var(--olive-bright); }
+    .nav-links { display: flex; gap: 2px; }
+    .nav-links a {
+      padding: 8px 12px;
+      color: #aeb5a8;
+      text-decoration: none;
+      border: 1px solid transparent;
+      font-size: 12px;
+      text-transform: uppercase;
     }
-    .hero-card { padding: 28px; }
-    .stat { padding: 16px 0; border-bottom: 1px solid var(--border); }
-    .stat:last-child { border-bottom: 0; }
-    .stat strong { display: block; font-size: 1.7rem; letter-spacing: -.04em; }
-    .stat span { color: var(--muted); }
+    .nav-links a:hover {
+      color: #fff;
+      background: linear-gradient(#586044, #3b402f);
+      border-color: #687150 #20251b #20251b #687150;
+    }
 
-    section { padding: 70px 0; }
-    .section-heading { margin-bottom: 28px; }
-    .section-heading h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.2rem); letter-spacing: -.045em; }
-    .section-heading p { color: var(--muted); margin: 8px 0 0; max-width: 720px; }
+    header { padding: 64px 0 42px; }
+    .hero { display: grid; grid-template-columns: 1.45fr .55fr; gap: 18px; align-items: stretch; }
+    .hero > div, .hero-card {
+      background: linear-gradient(135deg, rgba(49,53,44,.98), rgba(27,30,24,.98));
+      border: 1px solid var(--border-dark);
+      box-shadow: inset 0 0 0 1px var(--border-light), var(--shadow);
+    }
+    .hero > div { padding: 30px 32px 34px; }
+    .hero-card { padding: 14px 18px; }
+    .eyebrow { color: var(--olive-bright); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .16em; }
+    h1 { margin: 10px 0 12px; color: #eef1e8; font: 700 clamp(2.4rem, 6vw, 4.5rem)/.98 "Arial Narrow", Tahoma, sans-serif; letter-spacing: -.045em; text-shadow: 2px 2px #000; }
+    .hero h2 { margin: 0 0 19px; color: var(--blue); font-size: 16px; font-weight: 400; }
+    .lead { max-width: 760px; color: #c2c8bb; font-size: 14px; }
 
-    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
-    .pill { padding: 9px 13px; border-radius: 999px; background: rgba(255,255,255,.055); border: 1px solid var(--border); color: #dce6f7; }
+    .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 36px; padding: 0 15px;
+      color: #d5dacd;
+      background: linear-gradient(#4a4f43, #2d3129);
+      border: 1px solid #11130f;
+      box-shadow: inset 0 0 0 1px #61685a;
+      text-decoration: none; font-size: 12px; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .035em;
+    }
+    .button:hover { color: white; background: linear-gradient(#657249, #414a31); box-shadow: inset 0 0 0 1px #87965f; }
+    .button.primary { color: #f1f5e9; background: linear-gradient(#788c4b, #4f6032); box-shadow: inset 0 0 0 1px #9cac68; }
 
-    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .card { padding: 26px; }
-    .project-card { padding: 0; overflow: hidden; }
-    .project-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; border-bottom: 1px solid var(--border); background: var(--surface-2); }
-    .project-content { padding: 24px 26px 26px; }
-    .project-card:hover .project-image { transform: scale(1.025); }
-    .project-image { transition: transform .3s ease; }
-    .card h3 { margin: 0 0 8px; font-size: 1.25rem; }
-    .meta { color: var(--accent); font-size: .9rem; font-weight: 750; }
-    .card p { color: var(--muted); margin-bottom: 0; }
+    .stat { padding: 13px 2px; border-bottom: 1px solid #151813; box-shadow: 0 1px #4a5044; }
+    .stat:last-child { border-bottom: 0; box-shadow: none; }
+    .stat strong { display: block; color: #dfe5d6; font-size: 18px; }
+    .stat span { color: var(--muted); font-size: 12px; }
 
-    .timeline { display: grid; gap: 16px; }
-    .role { display: grid; grid-template-columns: 190px 1fr; gap: 26px; padding: 24px 0; border-top: 1px solid var(--border); }
-    .role:last-child { border-bottom: 1px solid var(--border); }
-    .role .date { color: var(--accent); font-weight: 750; }
-    .role h3 { margin: 0 0 7px; }
-    .role p { margin: 0; color: var(--muted); }
+    section { padding: 42px 0; }
+    section + section { border-top: 1px solid rgba(124,135,106,.15); }
+    .section-heading {
+      margin-bottom: 17px; padding: 9px 12px;
+      background: linear-gradient(90deg, #454b3e, #2b2f27 66%, transparent);
+      border-left: 4px solid var(--olive-bright);
+      border-top: 1px solid #596151;
+      border-bottom: 1px solid #11130f;
+    }
+    .section-heading h2 { margin: 0; color: #e1e6d9; font-size: 21px; text-transform: uppercase; letter-spacing: .06em; text-shadow: 1px 1px #000; }
+    .section-heading p { margin: 3px 0 0; color: var(--muted); font-size: 12px; }
 
-    .project-link { display: inline-block; margin-top: 14px; color: var(--accent); text-decoration: none; font-weight: 750; }
-    .project-link:hover { text-decoration: underline; }
+    .skills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .pill {
+      padding: 6px 10px;
+      color: #cbd2c3;
+      background: #2c3028;
+      border: 1px solid #12140f;
+      box-shadow: inset 0 0 0 1px #4e5548;
+      font-size: 12px;
+    }
 
-    .contact { text-align: center; padding: 46px; }
-    .contact h2 { margin-top: 0; font-size: clamp(2rem, 5vw, 3rem); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .card {
+      background: linear-gradient(#33382f, #24271f);
+      border: 1px solid #0d0f0c;
+      box-shadow: inset 0 0 0 1px #50574a, 0 5px 14px rgba(0,0,0,.35);
+    }
+    .project-card { overflow: hidden; }
+    .project-image { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; display: block; background: #111; border-bottom: 1px solid #090b08; filter: saturate(.8) contrast(1.04); }
+    .project-content { padding: 16px 17px 18px; }
+    .project-card:hover { box-shadow: inset 0 0 0 1px #7f8b69, 0 7px 18px rgba(0,0,0,.48); }
+    .card h3 { margin: 2px 0 7px; color: #edf0e8; font-size: 17px; text-transform: uppercase; }
+    .meta { color: var(--olive-bright); font-size: 11px; font-weight: 700; text-transform: uppercase; }
+    .card p { color: var(--muted); margin: 0; font-size: 13px; }
+    .project-link { display: inline-block; margin-top: 12px; color: #a8bd73; text-decoration: none; font-size: 12px; font-weight: 700; }
+    .project-link::before { content: "> "; }
+    .project-link:hover { color: #d8e9a4; text-decoration: underline; }
+
+    .timeline { background: #1d201a; border: 1px solid #0b0d0a; box-shadow: inset 0 0 0 1px #464c40; }
+    .role { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 17px 18px; border-bottom: 1px solid #0f110d; box-shadow: 0 1px #3c4238; }
+    .role:last-child { border-bottom: 0; box-shadow: none; }
+    .role:hover { background: rgba(111,125,66,.09); }
+    .role .date { color: var(--olive-bright); font-weight: 700; font-size: 12px; }
+    .role h3 { margin: 0 0 5px; color: #d9ded2; font-size: 15px; }
+    .role p { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .contact { padding: 32px; text-align: center; }
+    .contact h2 { margin: 0 0 8px; color: #e4e8de; font-size: 24px; text-transform: uppercase; }
     .contact p { color: var(--muted); }
 
-    footer { padding: 34px 0 52px; color: var(--muted); text-align: center; font-size: .92rem; }
+    footer { padding: 28px 0 42px; color: #747c6e; text-align: center; font-size: 11px; }
 
     @media (max-width: 800px) {
+      body::before { font-size: 9px; }
       .hero, .grid { grid-template-columns: 1fr; }
-      .hero { gap: 28px; }
-      .role { grid-template-columns: 1fr; gap: 5px; }
+      .hero > div { padding: 24px 20px; }
+      .role { grid-template-columns: 1fr; gap: 4px; }
       .nav-links { display: none; }
-      header { padding-top: 78px; }
-      .contact { padding: 30px 20px; }
+      header { padding-top: 38px; }
+      .contact { padding: 25px 18px; }
     }
   </style>
 </head>
@@ -202,10 +251,12 @@
       <div class="container">
         <div class="section-heading"><h2>Selected projects</h2><p>A sample of shipped independent and studio work.</p></div>
         <div class="grid">
-          <article class="card project-card"><img class="project-image" src="images/house-of-wolves-2.svg" alt="House of Wolves 2 project cover" loading="lazy"><div class="project-content"><div class="meta">Strategy game · Unity</div><h3>House of Wolves 2</h3><p>Independent strategy game with ownership across programming, IP creation, game design, art direction, planning, animation and marketing.</p><a class="project-link" href="https://www.youtube.com/watch?v=nCoq7Z0dp00" target="_blank" rel="noopener">Watch gameplay →</a></div></article>
-          <article class="card project-card"><img class="project-image" src="images/sellsword.svg" alt="Sellsword project cover" loading="lazy"><div class="project-content"><div class="meta">Multiplayer action game</div><h3>Sellsword</h3><p>A 2D medieval multiplayer combat game covering multiplayer systems, web development, art direction, design, animation and marketing.</p><a class="project-link" href="https://www.youtube.com/watch?v=BnOVHqHa-7Y" target="_blank" rel="noopener">Watch gameplay →</a></div></article>
-          <article class="card project-card"><img class="project-image" src="images/planet-noevo-2.svg" alt="Planet Noevo II project cover" loading="lazy"><div class="project-content"><div class="meta">Survival game · Armor Games</div><h3>Planet Noevo 2</h3><p>Created and shipped a survival game, including IP, design, planning, programming, animation, marketing and small-team coordination.</p><a class="project-link" href="https://armorgames.com/play/17620/planet-noevo-ii" target="_blank" rel="noopener">View project →</a></div></article>
-          <article class="card project-card"><img class="project-image" src="images/age-of-war.svg" alt="Age of War project cover" loading="lazy"><div class="project-content"><div class="meta">Creator / Lead Developer</div><h3>Age of War</h3><p>Competition-winning strategy game that became a major online success with millions of plays, followed by a sequel developed with a small art team.</p><a class="project-link" href="https://www.newgrounds.com/portal/view/408209" target="_blank" rel="noopener">Play Age of War →</a></div></article>
+          <article class="card project-card"><img class="project-image" src="https://i.ytimg.com/vi/I4g-eILqce0/hqdefault.jpg" alt="Bunker Sim gameplay screenshot from the linked development video" loading="lazy"><div class="project-content"><div class="meta">Colony Management / Survival · Unity</div><h3>Bunker Sim</h3><p>An original post-apocalyptic colony-management game set inside an underground bunker. Led programming, art direction, game design, planning, animation, marketing and small-team production.</p><a class="project-link" href="https://youtu.be/I4g-eILqce0" target="_blank" rel="noopener">Watch gameplay →</a></div></article>
+          <article class="card project-card"><img class="project-image" src="https://tse1.mm.bing.net/th?q=House+of+Wolves+Armor+Games+Louissi+gameplay&w=672&h=448&c=7&rs=1&p=0" alt="House of Wolves gameplay screenshot" loading="lazy"><div class="project-content"><div class="meta">Strategy / Resource Management · Armor Games</div><h3>House of Wolves</h3><p>A side-scrolling strategy game combining settlement building, resource gathering, unit recruitment and real-time combat across a medieval campaign.</p><a class="project-link" href="https://www.funnygames.org/game/house_of_wolves.html" target="_blank" rel="noopener">View project →</a></div></article>
+          <article class="card project-card"><img class="project-image" src="https://i.ytimg.com/vi/nCoq7Z0dp00/hqdefault.jpg" alt="House of Wolves 2 gameplay screenshot from the linked gameplay video" loading="lazy"><div class="project-content"><div class="meta">Strategy game · Unity</div><h3>House of Wolves 2</h3><p>Independent strategy game with ownership across programming, IP creation, game design, art direction, planning, animation and marketing.</p><a class="project-link" href="https://www.youtube.com/watch?v=nCoq7Z0dp00" target="_blank" rel="noopener">Watch gameplay →</a></div></article>
+          <article class="card project-card"><img class="project-image" src="https://i.ytimg.com/vi/BnOVHqHa-7Y/hqdefault.jpg" alt="Sellsword gameplay screenshot from the linked gameplay video" loading="lazy"><div class="project-content"><div class="meta">Multiplayer action game</div><h3>Sellsword</h3><p>A 2D medieval multiplayer combat game covering multiplayer systems, web development, art direction, design, animation and marketing.</p><a class="project-link" href="https://www.youtube.com/watch?v=BnOVHqHa-7Y" target="_blank" rel="noopener">Watch gameplay →</a></div></article>
+          <article class="card project-card"><img class="project-image" src="https://gamemedia.armorgames.com/17620/icn_heroimage.png?v=3" alt="Planet Noevo II gameplay screenshot" loading="lazy"><div class="project-content"><div class="meta">Survival game · Armor Games</div><h3>Planet Noevo 2</h3><p>Created and shipped a survival game, including IP, design, planning, programming, animation, marketing and small-team coordination.</p><a class="project-link" href="https://armorgames.com/play/17620/planet-noevo-ii" target="_blank" rel="noopener">View project →</a></div></article>
+          <article class="card project-card"><img class="project-image" src="https://assets.funnygames.nl/7/12737/65688/672x448/age-of-war-2.webp" alt="Age of War 2 gameplay screenshot" loading="lazy"><div class="project-content"><div class="meta">Lead Developer · Strategy / Defense</div><h3>Age of War 2</h3><p>Designed and led production of the sequel, expanding the original formula with evolving eras, new units, turrets, upgrades and special abilities.</p><a class="project-link" href="https://www.newgrounds.com/portal/view/537808" target="_blank" rel="noopener">Play Age of War 2 →</a></div></article>
         </div>
       </div>
     </section>
